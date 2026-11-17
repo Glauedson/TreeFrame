@@ -203,9 +203,7 @@ GitHub API  →  server/services  →  svgGen  →  /api/map  (image/svg+xml)
 ## 📄 License
 </div>
 
-This project currently does not have a defined open-source license.
-
-Feel free to explore the code and use it for learning or experimentation. If you intend to redistribute or use the project commercially, please contact me first.
+This project is licensed under the [MIT License](LICENSE).
 
 <div id=contact>
 
@@ -215,5 +213,5 @@ Feel free to explore the code and use it for learning or experimentation. If you
 If you have any questions, suggestions, or feedback about the project, feel free to reach out.
 
 * **Name:** Glauedson Carlos Rodrigues
-* **Email:** [gluedson.dev@gmail.com](mailto:gluedson.dev@gmail.com)
+* **Email:** [glauedson.dev@gmail.com](mailto:glauedson.dev@gmail.com)
 * **GitHub:** [@Glauedson](https://github.com/Glauedson)
