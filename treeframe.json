@@ -1,0 +1,15 @@
+{
+  "depth": 3,
+  "theme": "dark",
+  "showFiles": true,
+  "showComments": true,
+  "hide": [
+    "front-end/next-env.d.ts",
+    "front-end/next.config.mjs",
+    "front-end/package.json",
+    "front-end/README.md",
+    "front-end/tsconfig.json",
+    ".gitignore",
+    "package.json"
+  ]
+}
