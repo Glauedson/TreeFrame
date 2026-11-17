@@ -1,3 +1,4 @@
+/* ------- Tokens -------- */
 :root {
   --bg: #0d1117;
   --panel: #161b22;
@@ -10,6 +11,7 @@
   color-scheme: dark;
 }
 
+/* ------- Base ------- */
 * { box-sizing: border-box; }
 
 body {
@@ -23,19 +25,50 @@ body {
 
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+input, select, button { font: inherit; color: inherit; }
 
+/* ------- Layout ------- */
 .page { max-width: 1280px; margin: 0 auto; padding: 48px 24px 96px; }
 
+/* ------- Hero ------- */
 .hero { margin-bottom: 32px; }
-.hero--row { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
 .hero h1 { margin: 0 0 8px; font-size: clamp(28px, 5vw, 44px); letter-spacing: -0.03em; color: #fff; }
 .hero p { margin: 0; color: var(--muted); max-width: 56ch; }
 
-.editor { display: grid; grid-template-columns: minmax(320px, 440px) 1fr; gap: 32px; align-items: start; }
-.editor__controls, .editor__output { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
-@media (max-width: 900px) { .editor { grid-template-columns: 1fr; } }
+.hero--row { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
 
-input, select, button { font: inherit; color: inherit; }
+.hero--center { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+.hero--center h1 { margin: 0; }
+.hero--center p { max-width: 48ch; }
+
+.hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+
+/* GitHub-style buttons (Sponsor / View on GitHub / Star) */
+.gh-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+  background: #21262d;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  transition: background 0.15s, border-color 0.15s;
+}
+.gh-btn:hover { background: #30363d; border-color: #8b949e; }
+.gh-btn--sponsor svg { color: #db61a2; }
+
+/* Star + counter share one border, like on GitHub */
+.gh-btn--split { padding: 0; gap: 0; overflow: hidden; }
+.gh-btn__label { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; }
+.gh-btn__count { padding: 5px 12px; border-left: 1px solid var(--line); background: var(--bg); }
+
+/* ------- Buttons and form controls ------- */
 input[type='text'], input:not([type]), input[type='number'], select {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -59,6 +92,10 @@ input[type='color'] { width: 32px; height: 28px; padding: 0; background: none; b
 .btn--primary { background: var(--accent); border-color: var(--accent); color: #04181a; font-weight: 700; }
 .link { background: none; border: 0; padding: 0; color: var(--muted); text-decoration: underline; cursor: pointer; align-self: flex-start; }
 
+/* ------- Editor ------- */
+.editor { display: grid; grid-template-columns: minmax(320px, 440px) 1fr; gap: 32px; align-items: start; }
+.editor__controls, .editor__output { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+
 .repo-form { display: flex; flex-direction: column; gap: 8px; }
 .repo-form__row { display: flex; gap: 8px; }
 .repo-form__row input { flex: 1; }
@@ -76,6 +113,7 @@ input[type='color'] { width: 32px; height: 28px; padding: 0; background: none; b
 .folders__name { display: flex; align-items: center; gap: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .folders__note { padding: 4px 8px; font-size: 12px; }
 
+/* ------- Preview, notices and export ------- */
 .preview { display: block; width: 100%; max-width: 900px; height: auto; border-radius: 14px; }
 
 .notice { margin: 0; padding: 16px; border: 1px dashed var(--line); border-radius: var(--radius); color: var(--muted); }
@@ -87,4 +125,6 @@ input[type='color'] { width: 32px; height: 28px; padding: 0; background: none; b
 .export pre { margin: 0 0 12px; padding: 12px 16px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: auto; font-size: 12px; }
 .actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
+/* ------- Responsive and accessibility ------- */
+@media (max-width: 900px) { .editor { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

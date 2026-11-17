@@ -44,3 +44,11 @@ export async function fetchRepoConfig({ owner, repo, branch }: RepoRef): Promise
   if (!response.ok) return null;
   return response.json().catch(() => null);
 }
+
+/** Star count of a repository, or null when GitHub cannot be reached. */
+export async function fetchStarCount({ owner, repo }: Pick<RepoRef, 'owner' | 'repo'>): Promise<number | null> {
+  const response = await fetch(`${API_URL}/repos/${owner}/${repo}`, { headers: authHeaders(), ...cached });
+  if (!response.ok) return null;
+  const data = (await response.json()) as { stargazers_count?: number };
+  return data.stargazers_count ?? null;
+}
